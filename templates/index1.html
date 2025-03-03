@@ -1,0 +1,36 @@
+<!-- This file is developed by Divyasri Lakshmi Alekhya Nakka (018291702) -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Team Enigma Mastodon Demo</title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+    <h1>Enigma Mastodon Post Manager</h1>
+
+    <!-- Create a new post -->
+    <form method="post" class="post-form">
+        <label for="content">Post Status Update:</label>
+        <input type="text" id="content" name="content" required>
+        <button type="submit" name="create">Post</button>
+    </form>
+
+    {% if post_id %}
+    <div class="post-result">
+        <p>✅ Post Created! <strong>ID: {{ post_id }}</strong></p>
+
+        <form method="post" class="action-form">
+            <button type="submit" name="retrieve">Retrieve Latest Post</button>
+            <button type="submit" name="delete">Delete Latest Post</button>
+        </form>
+    </div>
+    {% endif %}
+
+    {% if post_content %}
+    <div class="retrieved-post">
+        <h3>📢 Retrieved Post:</h3>
+        <p>{{ post_content }}</p>
+    </div>
+    {% endif %}
+</body>
+</html>
