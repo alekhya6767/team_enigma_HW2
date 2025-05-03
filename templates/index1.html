@@ -15,6 +15,7 @@
         <button type="submit" name="create">Post</button>
     </form>
 
+    <!-- Display this section only if a post ID exists -->
     {% if post_id %}
     <div class="post-result">
         <p>✅ Post Created! <strong>ID: {{ post_id }}</strong></p>
@@ -26,6 +27,7 @@
     </div>
     {% endif %}
 
+    <!-- Display this section only if post content exists -->
     {% if post_content %}
     <div class="retrieved-post">
         <h3>📢 Retrieved Post:</h3>
